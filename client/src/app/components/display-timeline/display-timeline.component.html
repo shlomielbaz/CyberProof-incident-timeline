@@ -1,0 +1,9 @@
+<br />
+<h3>Timeline</h3>
+<ul>
+  <li *ngFor="let audit of audits">
+    <b>{{audit.title}}</b> <br />
+    <span  [innerHTML]="getFormatedMessage(audit)"></span>
+    <div class="timespan">{{getDisplayTime(audit.updated)}}</div>
+  </li>
+</ul>

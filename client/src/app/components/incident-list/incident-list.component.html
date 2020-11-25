@@ -1,0 +1,4 @@
+<select class="incident-list" multiple>
+  <option *ngFor="let incident of incidents" (click)="goIncident(incident)">{{incident.name}}</option>
+</select>
+<hr />

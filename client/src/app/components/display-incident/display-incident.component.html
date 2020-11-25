@@ -1,0 +1,59 @@
+<legend>Incident Information</legend>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <label>Name</label>
+        <div>{{incident.name}}</div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <label>Status</label>
+        <div>
+
+          <select name="status" [(ngModel)]="incident.status">
+            <option *ngFor="let status of statuses" [attr.selected]="status==incident.status ? true : null"
+             [value]="status">{{status | uppercase }}</option>
+          </select>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <label>Priority</label>
+        <div>
+          <select name="priority" [(ngModel)]="incident.priority">
+            <option *ngFor="let priority of priorities" [attr.selected]="priority==incident.priority ? true : null"
+              [value]="priority">{{priority | uppercase }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <label>Country</label>
+        <div>
+          <select name="country" [(ngModel)]="incident.country">
+            <option *ngFor="let country of countries" [attr.selected]="country==incident.country ? true : null"
+              [value]="country">{{country | uppercase }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <button  routerLink="/">&#8592;List</button> &nbsp;
+    <button (click)="saveIncident($event)">&#8593;Save</button>
+  </div>
+</div>
+<hr />
+
+
