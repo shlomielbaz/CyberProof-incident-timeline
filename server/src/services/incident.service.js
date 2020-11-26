@@ -62,10 +62,7 @@ class IncidentService {
 	}
 
 	static update(id, data) {
-		const idx = incidents.findIndex(incident => incident.id == id);
-		const incident = incidents[idx];
-
-		let audits = [];
+		const incident = incidents.find(incident => incident.id == id);
 
 		if (incident.audits === undefined) {
 			incident.audits = [];
@@ -119,11 +116,6 @@ class IncidentService {
 			});
 			incident['country'] = data['country'];
 		}
-
-		// incidents[idx] = Object.assign({
-		// 	audits: audits
-		// }, data);
-
 
 		return incident;
 	}
