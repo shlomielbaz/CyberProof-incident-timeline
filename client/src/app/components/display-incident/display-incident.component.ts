@@ -40,5 +40,4 @@ export class DisplayIncidentComponent implements OnInit {
       this.incident = data;
     });
   }
-
 }

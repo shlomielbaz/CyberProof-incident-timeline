@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { ActivatedRoute } from '@angular/router';
-
 
 import { IncidentModel } from '../../models/incident.model';
 import { IncidentService } from 'src/app/services/incident.service';
@@ -17,7 +14,7 @@ export class DisplayTimelineComponent implements OnInit {
   incident: IncidentModel;
   audits: any[];
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private incidentService: IncidentService) {
+  constructor(private incidentService: IncidentService) {
   }
 
   getDisplayTime(time: string) {
